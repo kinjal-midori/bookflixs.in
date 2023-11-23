@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style href="text/css">
+    div{
+        margin-top: 10px;
+        
+    }
+table, th, td {
+  border:1px solid black;
+}
+img{
+    height: 50px;
+    width: 50px;
+}
+form {
+  
+  margin: 0 auto;
+  text-align:center;
+  
+}
+
+.value-button {
+  display: inline-block;
+  border: 2px solid #ddd;
+  margin: 0px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+form #decrease {
+  margin-right: 2px;
+  border-radius: 8px 0 0 8px;
+}
+
+form #increase {
+  margin-left: 4px;
+  border-radius: 8px 0 0 8px;
+}
+
+form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 50px;
+  height: 50px;
+}
+
+input[type=number]::webkit-outer-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+    </style>
+
+<title>cart</title>
+<script type="text/javascript">
+    function increaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  document.getElementById('number').value = value;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value < 1 ? value = 1 : '';
+  value--;
+  document.getElementById('number').value = value;
+}
+  </script>
+</head>
+<body>
+   
+    <div class="container-fluid  mt-100">
+        <div class="row">
+        
+           <div class="col-md-12">
+           
+                   <div class="card">
+               <div class="card-header">
+               <h5>Cart</h5>
+               </div>
+               <div class="card-body cart">
+                       <div class="col-sm-12 empty-cart-cls text-center">
+                        <table style="width:100%">
+                            <tr>
+                              <th>Product</th>
+                              <th>Quantity</th>
+                              <th>place order</th>
+                              
+                            </tr>
+                            <tr>
+                              <td> <img src="it.jpg" alt="product1"> <br><h4>IT </h4><br><strong>price:179 Rs.</strong></td>
+                              <td>  <form>
+                               
+                                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                                <input type="number" id="number" value="0" />
+                                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                              </form></td>
+                             
+                            
+                            <td>
+                                <a  target="_blank" href="payment.html"><button class="btn btn-success" type="button"> BUY NOW</button></a>
+                            </td>
+                            </tr>
+                            
+                          </table>
+                         
+                           <a href="html.html"  class="btn btn-primary cart-btn-transform m-3" data-abc="true">continue shopping</a>
+                          <br>
+                           <img src="image/cart.png" width="130" height="130" class="img-fluid mb-4 mr-3">
+                       </div>
+               </div>
+       </div>
+               
+           
+           </div>
+        
+        </div>
+       
+       </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
